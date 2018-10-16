@@ -1,6 +1,17 @@
+/*
+ * @Author: Chen Baolong 
+ * @Date: 2018-10-15 18:47:30 
+ * @Last Modified by: Chen Baolong
+ * @Last Modified time: 2018-10-15 18:48:38
+ */
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+/**
+ *
+ *
+ * @param {*} { match }
+ */
 const BrowseUsersPage = ({ match }) => (
   <div>
     Browse Users

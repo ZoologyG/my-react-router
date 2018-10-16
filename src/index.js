@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
-import MockBrowser from './mock-browser'
+// import MockBrowser from './mock-browser'
 import AuthorizedRoute from './AuthorizedRoute'
 import store from './store'
 
@@ -11,18 +11,30 @@ import UnauthorizedLayout from './layouts/UnauthorizedLayout'
 import PrimaryLayout from './layouts/PrimaryLayout'
 
 // ** See notes on this `<App>` component at the bottom of this file **
-const App = props => (
+// const App = props => (
+//   <Provider store={store}>
+//     <BrowserRouter>
+//       <div>
+//         <MockBrowser />
+//         <hr/>
+//         <Switch>
+//           <Route path="/auth" component={UnauthorizedLayout} />
+//           <AuthorizedRoute path="/app" component={PrimaryLayout} />
+//           <Redirect to="/auth" />
+//         </Switch>
+//       </div>
+//     </BrowserRouter>
+//   </Provider>
+// )
+
+const App = () => (
   <Provider store={store}>
     <BrowserRouter>
-      <div>
-        <MockBrowser />
-        <hr/>
-        <Switch>
-          <Route path="/auth" component={UnauthorizedLayout} />
-          <AuthorizedRoute path="/app" component={PrimaryLayout} />
-          <Redirect to="/auth" />
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/auth" component={UnauthorizedLayout} />
+        <AuthorizedRoute path="/app" component={PrimaryLayout} />
+        <Redirect to="/auth" />
+      </Switch>
     </BrowserRouter>
   </Provider>
 )

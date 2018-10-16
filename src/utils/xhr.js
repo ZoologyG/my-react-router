@@ -1,4 +1,5 @@
 import store from '../store'
+import axios from 'axios'
 
 // These are "fake network" function that in a real scenario would
 // call the backend API and upon return would update your redux state.
@@ -15,13 +16,14 @@ export const getLoggedUser = () => {
 
 export const login = () => {
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
+    axios.get('/api/apigrouporder/grouporder/v1/authencationLogin')
+    .then(res => {
       store.dispatch({
         type: 'SET_LOGGED_USER',
         logged: true
       })
-      resolve()
-    }, 500)
+      resolve(res.data)
+    })
   })
 }
 

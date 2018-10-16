@@ -8,11 +8,12 @@ const LoginPage = ({ history }) => (
     <p>
       For this example application, we cannot visit <Link to="/app">/app</Link> until we are logged in.
       Clicking the "Login" button will simulate a login by setting Redux state. This example compliments
-      the CSS-Tricks article I wrote for <a target="_blank" href="https://css-tricks.com/react-router-4/">React Router 4</a>.
+      the CSS-Tricks article I wrote for <a target="blank" href="https://css-tricks.com/react-router-4/">React Router 4</a>.
     </p>
     <button onClick={() => {
-      login().then(() => {
-        history.push('/app')
+      login().then(res => {
+        console.log('res-->', res);
+        history.push('/app');
       })
     }}>Login</button>
   </div>

@@ -1,0 +1,9 @@
+:global(.primary-header){
+  border: 1px solid red;
+}
+:global(.nav a){
+  margin: 10px;
+}
+.active {
+  color: lightcoral;
+}
