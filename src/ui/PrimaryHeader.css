@@ -1,9 +1,18 @@
 :global(.primary-header){
   border: 1px solid red;
 }
-:global(.nav a){
+:global(a){
   margin: 10px;
 }
+a:link{
+  color: blue;
+}
+a:visited{
+  color: orange;
+}
+a.hover{
+  color: red;
+}
 .active {
-  color: lightcoral;
+  color: green;
 }

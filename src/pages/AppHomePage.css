@@ -1,12 +1,13 @@
 
-:global(.title) {
-  color: green;
-}
+@value colors: "./colors.css";
+@value red, green, blue from colors;
 
 .bg {
-  background-color: gray;
+  background-color: blue;
 }
 
 .title {
+  composes: font from './anhtor.css';
+  composes: bg;
   color: red;
 }
