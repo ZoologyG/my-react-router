@@ -16,14 +16,21 @@ export const getLoggedUser = () => {
 
 export const login = () => {
   return new Promise((resolve, reject) => {
-    axios.get('/api/apigrouporder/grouporder/v1/authencationLogin')
-    .then(res => {
+    // axios.get('/api/apigrouporder/grouporder/v1/authencationLogin')
+    // .then(res => {
+    //   store.dispatch({
+    //     type: 'SET_LOGGED_USER',
+    //     logged: true
+    //   })
+    //   resolve(res.data)
+    // })
+    setTimeout(() => {
       store.dispatch({
         type: 'SET_LOGGED_USER',
         logged: true
       })
-      resolve(res.data)
-    })
+      resolve()
+    }, 500);
   })
 }
 
